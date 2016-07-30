@@ -1,0 +1,11 @@
+<?php if (isset($username)): ?>
+    <a href="logout">Loogut braayy</a>
+<?php else: ?>
+    <a href="login">Form Login</a>
+
+    <form action="login" method="post">
+        <input type="text" name="username" value="">
+        <input type="password" name="password" value="">
+        <input type="submit" name="Log in">
+    </form>
+<?php endif; ?>

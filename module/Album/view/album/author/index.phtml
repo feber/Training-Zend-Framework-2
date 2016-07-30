@@ -1,0 +1,27 @@
+<?php
+
+$title = 'My authors';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('author', array('action'=>'add'));?>">Add new author</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($authors as $author) : ?>
+        <tr>
+            <td><?php echo $this->escapeHtml($author->name);?></td>
+            <td>
+                <a href="<?php echo $this->url('author',
+                array('action'=>'edit', 'id' => $author->id));?>">Edit</a>
+                <a href="<?php echo $this->url('author',
+                array('action'=>'delete', 'id' => $author->id));?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
